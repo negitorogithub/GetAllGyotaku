@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="popup.css" />
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="vue.js"></script>
+    <script src="popup.js"></script>
+
+</head>
+
+<body>
+    見つかった魚拓一覧
+    <div id="example-1">
+        <ul>
+            <li v-for="item in items">
+                <a href="{{ item.href }}" target='_newtab'>
+                    {{ item.href }}
+                </a>
+            </li>
+        </ul>
+        <p v-if="isLoadingGyotaku">
+            魚拓から読み込んでいます
+        </p>
+        <p v-if="isLoadingArchives">
+            Archive.isから読み込んでいます
+        </p>
+        <p v-if="isLoadingGoogleCache">
+            GoogleのCacheから読み込んでいます
+        </p>
+        <p v-if="isLoadingWaybackMachine">
+            WaybackMachineから読み込んでいます
+        </p>
+    </div>
+
+
+</body>
+
+</html>
